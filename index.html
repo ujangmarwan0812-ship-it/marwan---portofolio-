@@ -1,97 +1,136 @@
 ‎<!doctype html>
-‎<html lang="id">
-‎<head>
-‎  <meta charset="utf-8" />
-‎  <meta name="viewport" content="width=device-width,initial-scale=1" />
-‎  <title>Marwan — Portfolio Profesional TKJ</title>
-‎  <meta name="description" content="Marwan | Siswa TKJ — Portfolio amatir: jaringan, Mikrotik, web, PKL Kantor Pos." />
-‎  <link rel="stylesheet" href="styles.css">
-‎</head>
-‎<body>
-‎  <div class="wrap">
-‎    <header>
-‎      <a class="brand" href="#">
-‎        <img src="ISI DISINI.jpg" alt="Marwan" class="avatar">
-‎        <div>
-‎          <div class="name">Marwan</div>
-‎          <div class="muted">Siswa TKJ — PKL: Kantor Pos</div>
-‎        </div>
-‎      </a>
-‎      <nav>
-‎        <a href="#about">About</a>
-‎        <a href="#skills">Skills</a>
-‎        <a href="#projects">Projects</a>
-‎        <a href="#contact">Contact</a>
-‎      </nav>
-‎    </header>
-‎
-‎    <section id="hero" class="hero">
-‎      <div class="intro">
-‎        <h1>Hi, saya Marwan 👋</h1>
-‎        <p class="lead">Siswa SMK TKJ. Fokus: jaringan, Mikrotik, server ringan, web development.</p>
-‎        <a class="btn" href="#projects">Lihat Projek</a>
-‎      </div>
-‎      <div class="hero-img">
-‎        <div class="avatar-large">M</div>
-‎      </div>
-‎    </section>
-‎
-‎    <section id="about" class="card">
-‎      <h2>About Me</h2>
-‎      <p>Saya pernah belajar membangun jaringan LAN, setting Mikrotik, maintenance PC, dan membuat website. PKL di Kantor Pos memberi pengalaman real tentang penerimaan paket dan sistem logistik.</p>
-‎    </section>
-‎
-‎    <section id="skills" class="card">
-‎      <h2>Skills</h2>
-‎      <div class="skill-list">
-‎        <div class="skill">Mikrotik (RouterOS)</div>
-‎        <div class="skill">Jaringan LAN & WAN</div>
-‎        <div class="skill">TCP/IP, DHCP, NAT</div>
-‎        <div class="skill">HTML / CSS / JS</div>
-‎        <div class="skill">Linux (basic)</div>
-‎        <div class="skill">Troubleshooting PC</div>
-‎      </div>
-‎    </section>
-‎
-‎    <section id="projects" class="card">
-‎      <h2>Projects</h2>
-‎      <div class="project-grid">
-‎        <div class="project">
-‎          <div class="proj-thumb">PKL</div>
-‎          <h3>Laporan PKL - Penerimaan Paket</h3>
-‎          <p>Optimasi alur kerja Kantor Pos.</p>
-‎        </div>
-‎        <div class="project">
-‎          <div class="proj-thumb">WEB</div>
-‎          <h3>Sistem Informasi Kelas</h3>
-‎          <p>HTML/CSS/JS, data siswa & absensi sederhana.</p>
-‎        </div>
-‎        <div class="project">
-‎          <div class="proj-thumb">NET</div>
-‎          <h3>Setup Mikrotik Lab</h3>
-‎          <p>Konfigurasi NAT, Firewall, QOS dasar.</p>
-‎        </div>
-‎      </div>
-‎    </section>
-‎
-‎    <section id="contact" class="card">
-‎      <h2>Contact Me</h2>
-‎      <form id="contactForm">
-‎        <input type="text" placeholder="Marwan" required>
-‎        <input type="email" placeholder="Email=ujangmarwan0812@gmail.com" required>
-‎        <textarea placeholder="Pesan" rows="5" required></textarea>
-‎        <button type="submit" class="btn">Kirim Pesan</button>
-‎      </form>
-‎      <div id="formMsg" class="muted"></div>
-‎    </section>
-‎
-‎    <footer>
-‎      © <span id="year"></span> Marwan — Siswa TKJ. 
-‎    </footer>
-‎  </div>
-‎  <script src="script.js"></script>
-‎</body>
-‎</html>
-‎
-‎
-‎---
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marwan — Portfolio TKJ (v3.0)</title>
+  <meta name="description" content="Marwan | Siswa TKJ — Portfolio: jaringan, Mikrotik, web. Versi 3.0 dengan parallax." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#hero">
+      <img src="avatar.jpg" alt="Marwan" class="avatar" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <div class="name">Marwan</div>
+        <div class="role">Siswa TKJ</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- HERO dengan parallax -->
+  <section id="hero" class="hero parallax">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="reveal-left">Halo — Saya Marwan</h1>
+        <p class="lead reveal-left delay-1">Siswa SMK TKJ. Fokus: jaringan, Mikrotik, web dev & server ringan. PKL: Kantor Pos.</p>
+        <div class="hero-cta reveal-left delay-2">
+          <a href="#projects" class="btn">Lihat Projek</a>
+          <a href="#contact" class="btn btn-ghost">Hubungi</a>
+        </div>
+      </div>
+
+      <div class="hero-media reveal-right">
+        <div class="avatar-large-wrap">
+          <img src="avatar.jpg" alt="Foto Marwan" class="avatar-large" onerror="this.style.display='none'">
+          <!-- fallback ilustrasi jika avatar tidak ada -->
+          <div class="avatar-fallback">M</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-main">
+    <section id="about" class="card reveal-up">
+      <h2>About Me</h2>
+      <p>Saya suka membangun jaringan LAN, mengonfigurasi Mikrotik RouterOS, melakukan troubleshooting PC, dan membuat dokumentasi berbasis web. Pengalaman PKL di Kantor Pos mengajarkan alur proses penerimaan paket dan logistik.</p>
+    </section>
+
+    <section id="skills" class="card reveal-up delay-1">
+      <h2>Skills</h2>
+      <div class="skill-list">
+        <span class="skill">Mikrotik (RouterOS)</span>
+        <span class="skill">LAN / WAN</span>
+        <span class="skill">TCP/IP, DHCP, NAT</span>
+        <span class="skill">HTML / CSS / JS</span>
+        <span class="skill">Linux (basic)</span>
+        <span class="skill">Troubleshooting</span>
+      </div>
+    </section>
+
+    <section id="projects" class="card reveal-up delay-2">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project reveal-card">
+          <div class="proj-thumb">📦</div>
+          <h3>Proses Penerimaan Paket</h3>
+          <p>Dokumentasi & optimasi alur penerimaan paket di Kantor Pos (PKL).</p>
+        </article>
+
+        <article class="project reveal-card delay-1">
+          <div class="proj-thumb">💻</div>
+          <h3>Sistem Informasi Kelas</h3>
+          <p>Web sederhana untuk manajemen data siswa & absensi.</p>
+        </article>
+
+        <article class="project reveal-card delay-2">
+          <div class="proj-thumb">🌐</div>
+          <h3>Setup Mikrotik Lab</h3>
+          <p>Konfigurasi NAT, firewall, dan bandwidth control di VirtualBox.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificates" class="card reveal-up delay-3">
+      <h2>Certificates & Experience</h2>
+      <ul class="cert-list">
+        <li>PKL: Kantor Pos Indonesia (2025)</li>
+        <li>Sertifikat Mikrotik Basic Configuration</li>
+        <li>Workshop Web Development (HTML/CSS)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card reveal-up delay-4">
+      <h2>Contact</h2>
+      <form id="contactForm" class="contact-form">
+        <input type="text" name="name" placeholder="Nama" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Pesan" rows="5" required></textarea>
+        <div class="form-row">
+          <button type="submit" class="btn">Kirim Pesan</button>
+          <button type="button" id="resetBtn" class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+      <div id="formMsg" class="muted" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Marwan — Portfolio TKJ</small>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Popup sukses -->
+  <div id="popup" class="popup">
+    <div class="popup-inner">
+      <button id="popupClose" class="popup-close" aria-label="Close">✕</button>
+      <h3>Pesan Terkirim</h3>
+      <p>Terima kasih! Pesanmu sudah terkirim (simulasi).</p>
+      <button id="popupOk" class="btn">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+            </html>
