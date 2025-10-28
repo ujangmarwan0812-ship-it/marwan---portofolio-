@@ -1,0 +1,120 @@
+/* ----- Variables & base ----- */
+:root{
+  --bg:#071026;
+  --card:#07182a;
+  --text:#e6eef6;
+  --muted:#9fb1c6;
+  --accent:#33b5ff;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --trans: 0.4s;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#02061a 0%, #081428 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit}
+
+/* ----- Header ----- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;padding:10px 18px;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(2,6,23,0.7), rgba(3,10,23,0.35));
+  border-bottom:1px solid rgba(255,255,255,0.02);
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(51,181,255,0.15)}
+.brand-text .name{font-weight:700}
+.brand-text .role{font-size:13px;color:var(--muted)}
+
+/* nav */
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{font-weight:600;font-size:14px;padding:6px 8px;border-radius:8px;transition:all var(--trans)}
+.nav a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+.icon-btn{background:transparent;border:0;color:var(--text);cursor:pointer;font-size:18px}
+
+/* ----- HERO & PARALLAX ----- */
+.hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  /* fallback layered gradient resembling galaksi */
+  background-image:
+    radial-gradient(ellipse at 10% 20%, rgba(51,181,255,0.10) 0%, transparent 15%),
+    radial-gradient(ellipse at 80% 80%, rgba(120,60,255,0.06) 0%, transparent 18%),
+    linear-gradient(180deg, rgba(2,6,23,0.8), rgba(3,10,23,0.95));
+  background-size: 200% 200%, 180% 180%, cover;
+  background-position: center center;
+}
+
+/* If user adds parallax-bg.jpg in same folder, JS will move it (layered) */
+.hero-inner{width:100%;max-width:1100px;padding:48px;display:grid;grid-template-columns:2fr 1fr;gap:30px;align-items:center}
+.hero-copy h1{font-size:34px;margin:0 0 10px}
+.lead{color:var(--muted);margin:0 0 16px}
+.hero-cta{display:flex;gap:12px}
+.btn{background:linear-gradient(90deg,var(--accent),#2563eb);color:#012;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform var(--trans)}
+.btn:hover{transform:translateY(-4px);opacity:0.95}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+/* avatar area */
+.avatar-large-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.avatar-large{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(51,181,255,0.18);display:block}
+.avatar-fallback{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:54px;background:linear-gradient(135deg,var(--accent),#5b21b6);color:#012;font-weight:800}
+
+/* ----- Main content cards ----- */
+.site-main{max-width:1100px;margin:0 auto;padding:30px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+.skill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.skill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;font-size:14px;color:var(--muted)}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px}
+.project{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));text-align:left;transition:all 0.35s}
+.project:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(14,165,233,0.12)}
+.proj-thumb{height:84px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:30px}
+
+/* certificates */
+.cert-list{margin:0;padding-left:18px;color:var(--muted)}
+
+/* contact */
+.contact-form input,.contact-form textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:var(--text);margin-bottom:10px}
+.form-row{display:flex;gap:10px;align-items:center}
+
+/* footer */
+.site-footer{text-align:center;padding:18px;color:var(--muted)}
+
+/* scroll-top */
+.scroll-top{position:fixed;right:18px;bottom:18px;background:var(--accent);border:0;color:#012;padding:10px 12px;border-radius:10px;cursor:pointer;box-shadow:0 8px 30px rgba(51,181,255,0.15);display:none;z-index:60}
+
+/* popup */
+.popup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.popup-inner{background:var(--card);padding:20px;border-radius:12px;max-width:420px;text-align:center;position:relative}
+.popup-close{position:absolute;right:10px;top:8px;background:transparent;border:0;font-size:18px;color:var(--muted);cursor:pointer}
+
+/* reveal animations */
+.reveal-left{opacity:0;transform:translateX(-20px);transition:all 0.7s cubic-bezier(.2,.9,.2,1)}
+.reveal-right{opacity:0;transform:translateX(20px);transition:all 0.7s cubic-bezier(.2,.9,.2,1)}
+.reveal-up{opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(.2,.9,.2,1)}
+.reveal-card{opacity:0;transform:translateY(12px);transition:all 0.6s}
+.visible{opacity:1;transform:none}
+.delay-1{transition-delay:0.15s}
+.delay-2{transition-delay:0.28s}
+.delay-3{transition-delay:0.42s}
+.delay-4{transition-delay:0.56s}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:20px;padding:28px}
+  .avatar-large{width:130px;height:130px}
+  .nav{gap:8px}
+}
+
+/* small screens */
+@media(max-width:520px){
+  .brand-text .name{font-size:15px}
+  .btn{padding:9px 12px;font-size:14px}
+}
